@@ -10,41 +10,33 @@ const repeatedWords = [
   "matter",
   "truth",
   "disobedience",
-  "matter"
+  "matter",
 ];
 
 function howManyTimes(array, word) {
-  let number = 0;  
+  let number = 0;
 
   for (const element of array) {
-    if (element === word){
-    number++
+    if (element === word) {
+      number++;
     }
-  } 
-console.log(number)
+  }
+  return number;
 }
 
-
 howManyTimes(repeatedWords, "matter");
-
-
 
 // Iteration 2 | Number Sequence
 function createSequence(n) {
   let sequence = [];
-  for (let i = 0; i < n; i++) {
-    sequence.push(i);
+  if (n != 0) {
+    for (let i = 0; i <= n; i++) {
+      sequence.push(i);
+    }
   }
-  console.log(sequence);
+  return sequence;
 }
-createSequence(7)
-
-// Implement the function multiplyBy that takes two arguments: an array of numbers and a number (multiplier). It should return a new array containing each number of the first array multiplied by the multiplier.
-
-// Important: You must use the forEach() method in the function to iterate over the array. If you need a refresher on the forEach() method, check today's lesson or the following MDN page.
-
-// You can use the following array to test your solution:
-
+createSequence();
 
 // Iteration 3 | Multiply for Each
 
@@ -53,50 +45,36 @@ const numbers = [1, 2, 5, 10, 13, 50];
 function multiplyBy(array, number) {
   const newArray = [];
 
+  array.forEach((element) => {
+    newArray.push(element * number);
+  });
 
-array.forEach((element)=>{
-  newArray.push(element * number)
-})
-
-  return newArray
+  return newArray;
 }
 
-multiplyBy(numbers, 2)
-
-
-
+multiplyBy(numbers, 2);
 
 // Iteration 4 | Filter Out
+
 const original = ["cat", "dog", "fish", "bird", "cat", "fish"];
 const toRemove = ["cat", "dog"];
 
-/*Declare a function filterOut. The function should take two arguments: an array of strings (original), and an array of strings to filter 
-out.
+function filterOut(original, newArray) {
+  const holi = [];
 
-The function should return a new array that only includes the strings from the original array that are not present in the second array. 
-In other words, you should remove all the strings listed in the second array.
+  if (original.length === 0) {
+    return null;
+  }
 
-You can use the following array to test your solution: */
-
-function filterOut(firstArray, secondArray) {
-
-    let thirdArray = [];
-    //thirdArray.filter((element) => firstArray === secondArray)
-
-    for (let i = 0; i < firstArray.length; i++) {
-      if (secondArray[i] !== firstArray[i]) {
-        thirdArray.push(firstArray[i])
-      }
-      
+  for (let i = 0; i < original.length; i++) {
+    if (!original.includes(newArray[i])){
+      holi.push(original[i]);
     }
-    console.log(thirdArray);
-    
-
+  }
+  return holi;
 }
+
 filterOut(original, toRemove);
-
-
-
 
 // Iteration 5 | Unique Arrays
 const duplicateWords = [
@@ -116,18 +94,10 @@ const duplicateWords = [
 function uniquifyArray(arr) {
   if (arr.length === 0) {
     return null;
-  };
-
-  return arr.filter((value, index) => arr.indexOf(value) === index);
-  
-
+  }
+  return arr.filter((value, index) => arr.indexOf(value) === index)
 }
-console.log(uniquifyArray(duplicateWords));
-
-
-
-
-
+uniquifyArray(duplicateWords);
 
 
 // Bonus: Iteration 6 | Product of Adjacent Numbers
