@@ -67,7 +67,7 @@ function filterOut(original, newArray) {
   }
 
   for (let i = 0; i < original.length; i++) {
-    if (!original.includes(newArray[i])){
+    if (!newArray.includes(original[i])){
       holi.push(original[i]);
     }
   }
