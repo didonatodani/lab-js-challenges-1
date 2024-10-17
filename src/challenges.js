@@ -32,7 +32,7 @@ howManyTimes(repeatedWords, "matter");
 // Iteration 2 | Number Sequence
 function createSequence(n) {
   let sequence = [];
-  for (let i = 0; i <= n; i++) {
+  for (let i = 0; i < n; i++) {
     sequence.push(i);
   }
   console.log(sequence);
@@ -70,7 +70,30 @@ multiplyBy(numbers, 2)
 const original = ["cat", "dog", "fish", "bird", "cat", "fish"];
 const toRemove = ["cat", "dog"];
 
-function filterOut() {}
+/*Declare a function filterOut. The function should take two arguments: an array of strings (original), and an array of strings to filter 
+out.
+
+The function should return a new array that only includes the strings from the original array that are not present in the second array. 
+In other words, you should remove all the strings listed in the second array.
+
+You can use the following array to test your solution: */
+
+function filterOut(firstArray, secondArray) {
+
+    let thirdArray = [];
+    //thirdArray.filter((element) => firstArray === secondArray)
+
+    for (let i = 0; i < firstArray.length; i++) {
+      if (secondArray[i] !== firstArray[i]) {
+        thirdArray.push(firstArray[i])
+      }
+      
+    }
+    console.log(thirdArray);
+    
+
+}
+filterOut(original, toRemove);
 
 
 
@@ -90,7 +113,19 @@ const duplicateWords = [
   "bring"
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(arr) {
+  if (arr.length === 0) {
+    return null;
+  };
+
+  return arr.filter((value, index) => arr.indexOf(value) === index);
+  
+
+}
+console.log(uniquifyArray(duplicateWords));
+
+
+
 
 
 
