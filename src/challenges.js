@@ -30,8 +30,14 @@ howManyTimes(repeatedWords, "matter");
 
 
 // Iteration 2 | Number Sequence
-function createSequence() {}
-
+function createSequence(n) {
+  let sequence = [];
+  for (let i = 0; i <= n; i++) {
+    sequence.push(i);
+  }
+  console.log(sequence);
+}
+createSequence(7)
 
 
 
