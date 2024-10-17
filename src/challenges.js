@@ -39,12 +39,29 @@ function createSequence(n) {
 }
 createSequence(7)
 
+// Implement the function multiplyBy that takes two arguments: an array of numbers and a number (multiplier). It should return a new array containing each number of the first array multiplied by the multiplier.
+
+// Important: You must use the forEach() method in the function to iterate over the array. If you need a refresher on the forEach() method, check today's lesson or the following MDN page.
+
+// You can use the following array to test your solution:
 
 
 // Iteration 3 | Multiply for Each
+
 const numbers = [1, 2, 5, 10, 13, 50];
 
-function multiplyBy() {}
+function multiplyBy(array, number) {
+  const newArray = [];
+
+
+array.forEach((element)=>{
+  newArray.push(element * number)
+})
+
+  return newArray
+}
+
+multiplyBy(numbers, 2)
 
 
 
